@@ -1,0 +1,89 @@
+@import url(../tailwind.js);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'GT Flexa Trial', sans-serif;
+}
+
+@font-face {
+    font-family: 'GT Flexa';
+    src: url(../fonts/Gt-font/Web/GT-Flexa/GT-Flexa-Compressed-Black-Italic-Trial.woff2);
+}
+
+@font-face {
+    font-family: "GT Flexa X Cm Bl";
+    src: url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.eot");
+    src: url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/27e54ae60938218aedf5e3cdd9b7c57a.svg#GT Flexa X Cm Bl")format("svg");
+}
+
+.ff_gt_x_cm {
+    font-family: "GT Flexa X Cm Bl",
+        sans-serif;
+}
+
+.transparent-text {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    transition: all 100ms linear;
+}
+
+.transparent-text:hover {
+    color: black;
+}
+
+.transparent-text-sea-green {
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #00FFE0;
+}
+
+.hover-fill {
+    background-size: 400% 200%;
+    background-position: 100% 0;
+    background-image: linear-gradient(to right, #00FFE0 50%, transparent 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background-position 100ms ease;
+}
+
+.menu-slide.hidden {
+    opacity: 0;
+    z-index: -1;
+}
+
+.menu-slide.show {
+    opacity: 1;
+    z-index: 20;
+    transition: opacity 0.5s ease;
+}
+
+nav {
+    transition: background-color 0.3s ease, top 0.3s ease;
+}
+
+
+#brand-neu {
+    position: relative;
+    z-index: 2;
+}
+
+#kernkompetenz {
+    position: relative;
+    z-index: 10;
+}
+
+
+.tra {
+    transform: rotate(-2deg) translate(0px, 100px);
+}
+.tra-x-30{
+    transform: translateX(-30px);
+}

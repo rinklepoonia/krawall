@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>krawall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/tailwind.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <!-- <div class="bg-light-black h-[39px] w-full"></div> -->
+        <!-- <img class="w-full lg:h-[48px]" src="./assets/images/png/nav-bar.png" alt="nav-bar"> -->
+    </header>
+    <section id="video-section" class="relative min-h-screen overflow-hidden z-1">
+        <video autoplay muted loop class="fixed inset-0 w-full h-full object-cover z-10">
+            <source src="./assets/videos/krawall-undjuwel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <nav
+        class="fixed top-[30px]  left-0 right-0 lg:pr-[99px] lg:pl-[90px] px-3 lg:h-[132px] h-[75px] flex justify-between items-center z-[11]">
+        <div>
+            <!-- menu -->
+            <button id="menuBtn"
+                class="relative z-40 group hover:text-bright-aqua flex items-center transition duration-300 easy-linear">
+                <svg id="close-icon" class="hidden group-hover:fill-bright-aqua duration-300 transition" width="44"
+                    height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="11.5498" y="10.4492" width="31.1127" height="1.55563"
+                        transform="rotate(45 11.5498 10.4492)" fill="white"
+                        class="group-hover:fill-bright-aqua duration-300" />
+                    <rect x="33.5498" y="11.5508" width="31.1127" height="1.55563"
+                        transform="rotate(135 33.5498 11.5508)" fill="white"
+                        class="group-hover:fill-bright-aqua duration-300" />
+                </svg>
+                <span id="menu-text"
+                    class="font-normal md:text-custom-sm text-sm uppercase text-white hover:text-bright-aqua cursor-pointer duration-300 transition">Menu</span>
+            </button>
+            <!-- Menu Slide -->
+            <div id="menulist" class="menulist fixed bg-black inset-0 transition-all ease-linear duration-300 hidden">
+                <div class="min-h-screen flex flex-col">
+                    <div class="flex flex-grow items-center">
+                        <div class="max-w-[1181px] z-[30] max-lg:mx-auto container">
+                            <div class="">
+                                <p
+                                    class="transparent-text-sea-green hover-fill 2xl:text-custom-9xl sm:text-custom-8xl text-6xl uppercase italic leading-none max-w-[600px]">
+                                    Service</p>
+                                <p
+                                    class="hover-fill transparent-text-sea-green 2xl:text-custom-9xl sm:text-custom-8xl text-6xl uppercase italic leading-none max-w-[500px]">
+                                    Cases</p>
+                                <p
+                                    class="hover-fill transparent-text-sea-green 2xl:text-custom-9xl sm:text-custom-8xl text-6xl uppercase italic leading-none max-w-[600px]">
+                                    Kontakt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="container max-w-[1529px] mx-auto lg:pr-[99px] lg:pl-[90px] px-3 pb-10 flex flex-wrap sm:gap-14 gap-12 items-center max-sm:justify-center">
+                        <button
+                            class="text-white relative uppercase text-custom-sm leading-none group z-10 bg-black hover:text-bright-aqua duration-300">jobs
+                            <svg class="absolute top-[10%] group-hover:left-[115%] -z-10 left-0 duration-300" width="15"
+                                height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.8229 12.6132L18.4351 13L17.6567 12.2294L18.0444 11.8456L22.8912 7.0477H0V5.95526H22.8912L18.0444 1.15444L17.6567 0.770611L18.4351 0L18.8229 0.386782L24.6093 6.11469L25 6.49852L24.6093 6.88235L18.8229 12.6103V12.6132Z"
+                                    fill="transparent" class="group-hover:fill-bright-aqua duration-300" />
+                            </svg>
+                        </button>
+                        <button
+                            class="text-white relative uppercase text-custom-sm leading-none group z-10 bg-black hover:text-bright-aqua duration-300">Impressum
+                            <svg class="absolute top-[10%] group-hover:md:left-[115%] group-hover:left-[105%] -z-10 left-0 duration-300"
+                                width="15" height="13" viewBox="0 0 25 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.8229 12.6132L18.4351 13L17.6567 12.2294L18.0444 11.8456L22.8912 7.0477H0V5.95526H22.8912L18.0444 1.15444L17.6567 0.770611L18.4351 0L18.8229 0.386782L24.6093 6.11469L25 6.49852L24.6093 6.88235L18.8229 12.6103V12.6132Z"
+                                    fill="transparent" class="group-hover:fill-bright-aqua duration-300" />
+                            </svg>
+                        </button>
+                        <button
+                            class="text-white relative uppercase text-custom-sm leading-none group z-10 bg-black hover:text-bright-aqua duration-300">Datenschutz
+                            <svg class="absolute top-[10%] group-hover:md:left-[115%] group-hover:left-[105%] -z-10 left-0 duration-300"
+                                width="15" height="13" viewBox="0 0 25 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.8229 12.6132L18.4351 13L17.6567 12.2294L18.0444 11.8456L22.8912 7.0477H0V5.95526H22.8912L18.0444 1.15444L17.6567 0.770611L18.4351 0L18.8229 0.386782L24.6093 6.11469L25 6.49852L24.6093 6.88235L18.8229 12.6103V12.6132Z"
+                                    fill="transparent" class="group-hover:fill-bright-aqua duration-300" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/images/png/Union.png" alt="logo" class="md:max-w-[133px] max-w-[77px] z-[60]" width="133"
+            height="70">
+        <div
+            class="size-[73px]  relative rounded-full z-40 flex justify-center items-center bg-none hover:bg-dimond-bg group bg-center bg-no-repeat duration-300">
+            <div
+                class="bg-bright-aqua group-hover:bg-transparent size-[49px] flex justify-center items-center rounded-full duration-300">
+                <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M29 8.29178C29 8.25729 28.9973 8.22546 28.9894 8.19098C28.9894 8.18037 28.984 8.17241 28.9814 8.1618C28.9761 8.13793 28.9681 8.11671 28.9601 8.09549C28.9548 8.08488 28.9494 8.07427 28.9441 8.06101C28.9361 8.04244 28.9255 8.02387 28.9122 8.00531C28.9095 8 28.9069 7.9947 28.9042 7.98939L25.7116 3.34748C25.6929 3.3183 25.669 3.29178 25.645 3.27056C25.6158 3.24138 25.5812 3.21751 25.5466 3.19629C25.5413 3.19363 25.5386 3.18833 25.5333 3.18568L19.9488 0.066313C19.869 0.0212202 19.7812 0 19.6881 0H9.31193C9.22147 0 9.13101 0.0238727 9.05119 0.066313L3.46404 3.18302C3.46404 3.18302 3.45605 3.18833 3.45339 3.19098C3.38954 3.22812 3.33101 3.28117 3.28578 3.34483L0.0931193 7.98939C0.0931193 7.98939 0.0877982 8 0.0851376 8.00531C0.0744954 8.02387 0.0638532 8.04244 0.053211 8.06101C0.0478899 8.07162 0.0425688 8.08223 0.0372477 8.09549C0.0292661 8.11671 0.0212844 8.14058 0.0159633 8.1618C0.0159633 8.17241 0.0106422 8.18037 0.00798165 8.19098C0.00266055 8.22281 0 8.25729 0 8.29178V8.29708C0 8.32891 0.00266055 8.36074 0.0106422 8.38992C0.0106422 8.38992 0.0106422 8.39523 0.0106422 8.39788C0.0106422 8.40584 0.0159633 8.41379 0.0186239 8.42175C0.023945 8.44297 0.0319266 8.46684 0.0399083 8.48806C0.0452294 8.50133 0.0505505 8.51194 0.0558716 8.52255C0.0638532 8.54111 0.0744954 8.55968 0.0851376 8.5756C0.0931193 8.58621 0.101101 8.59947 0.109083 8.61008C0.114404 8.61804 0.119725 8.62599 0.127706 8.63395L14.0956 24.8143C14.0956 24.8143 14.1009 24.817 14.1009 24.8196C14.1089 24.8276 14.1142 24.8329 14.1222 24.8408C14.1302 24.8488 14.1382 24.8568 14.1488 24.8621C14.1541 24.8674 14.1621 24.8727 14.1674 24.878C14.1728 24.8833 14.1781 24.8886 14.1834 24.8912C14.1834 24.8912 14.1887 24.8912 14.1887 24.8939C14.1967 24.8992 14.2047 24.9045 14.2127 24.9098C14.226 24.9178 14.2393 24.9257 14.2526 24.9337C14.2739 24.9443 14.2925 24.9523 14.3138 24.9602C14.3244 24.9629 14.3324 24.9682 14.343 24.9708C14.351 24.9708 14.359 24.9761 14.367 24.9788C14.4069 24.9894 14.4494 24.9947 14.4894 24.9947C14.5319 24.9947 14.5718 24.9894 14.6117 24.9788C14.6197 24.9788 14.6277 24.9735 14.6383 24.9708C14.649 24.9682 14.6596 24.9629 14.6676 24.9602C14.6889 24.9523 14.7102 24.9443 14.7288 24.9337C14.7421 24.9257 14.7554 24.9178 14.7687 24.9098C14.7767 24.9045 14.7847 24.9019 14.7927 24.8966C14.7927 24.8966 14.798 24.8966 14.798 24.8939C14.8033 24.8886 14.8086 24.8833 14.8139 24.8806C14.8219 24.8753 14.8272 24.87 14.8326 24.8647C14.8406 24.8568 14.8512 24.8515 14.8592 24.8408C14.8672 24.8329 14.8725 24.8276 14.8805 24.8196C14.8805 24.8196 14.8858 24.817 14.8884 24.8143L28.8563 8.63395C28.8563 8.63395 28.867 8.61804 28.875 8.61008C28.8829 8.59947 28.8909 8.58886 28.8989 8.5756C28.9095 8.55703 28.9202 8.54111 28.9282 8.52255C28.9335 8.51194 28.9388 8.49867 28.9441 8.48806C28.9521 8.46684 28.9601 8.44562 28.9654 8.42175C28.9654 8.41379 28.9707 8.40584 28.9734 8.39788C28.9734 8.39788 28.9734 8.39257 28.9734 8.38992C28.9787 8.35809 28.984 8.32891 28.984 8.29708V8.29178H29ZM3.88972 4.34748L8.64413 7L6.79505 11.5517L2.05128 8.60743L1.28505 8.13263L3.88706 4.34748H3.88972ZM19.6535 15.061L14.5 23.4536L8.00028 12.8647H20.9997L19.6535 15.061ZM22.205 11.5517L20.3559 7L25.1103 4.34748L27.715 8.13263L22.205 11.5517ZM19.3289 7.29443L21.1594 11.8037H7.84064L9.6711 7.29443H19.3289ZM9.45028 1.06101H19.5497L24.1871 3.64721L19.5497 6.23342H9.45028L4.81294 3.64721L9.45028 1.06101ZM6.66202 12.7188L10.3735 18.7639L10.6129 19.1538L3.20596 10.5729L6.66202 12.7188ZM18.3871 19.1538L22.338 12.7188L25.794 10.5729L18.3871 19.1512V19.1538Z"
+                        fill="black" />
+                </svg>
+            </div>
+            <p
+                class="absolute uppercase text-transparent group-hover:text-white right-[70%] -z-10 group-hover:right-[120%] duration-500 text-lg text-nowrap">
+                Start a project</p>
+        </div>
+    </nav>
+    <!-- brand-neu -->
+    <section id="brand-neu"
+        class="bg-black lg:pt-[235px] lg:pb-[100px] lg:pb-0 md:py-[170px] py-[100px] overflow-x-clip">
+        <div class="lg:px-[100px] px-3 ">
+            <h2
+                class="ff-gt-flexa font-bold italic	lg:text-custom-8xl sm:text-5xl text-4xl !leading-90 text-white lg:max-w-[1258px] uppercase">
+                Wir
+                sind eine Agentur für Branding und
+                Kampagnen.</h2>
+        </div>
+        <div class="flex flex-wrap flex-row mx-[-12px] items-center xl:pt-0 pt-10 mx-auto">
+            <div class="lg:w-[50%] w-full px-3 flex justify-center items-center">
+                <img class="max-md:max-w-[500px] w-full max-w-[905px]" width="905" height="904" loading="lazy"
+                    src="./assets/images/png/brand-new.png" alt="brand-new">
+            </div>
+            <div class="lg:w-[50%] w-full px-3 max-lg:flex justify-center items-center flex-col">
+                <div class="mb-0">
+                    <p
+                        class="ff-gt-flexa font-light lg:text-custom-3xl sm:text-2xl text-xl leading-128 text-white lg:max-w-[588px] xl:pb-[146px] sm:pb-[100px] pb-10 lg:pt-[100px]">
+                        In einer Welt voller visueller Reize und kurzer Aufmerksamkeitsspannen haben wir den Mut, anders
+                        zu
+                        sein. Wir brechen Konventionen, setzen Trends und hinterlassen einen bleibenden Eindruck.
+                        Kreativität
+                        ist für uns nicht nur ein Beruf, sondern eine Leidenschaft.</p>
+                    <p
+                        class="ff-gt-flexa font-bold italic lg:text-custom-5xl sm:text-4xl text-xl text-white uppercase !leading-100">
+                        Wir sind</p>
+                    <p
+                        class="ff-gt-flexa font-bold italic lg:text-custom-5xl sm:text-4xl text-xl text-bright-aqua uppercase !leading-100">
+                        Krawall <span class="text-white">und</span> Juwel.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- bg-blue -->
+    <section id="kernkompetenz"
+        class="bg-kernkompetenz-img bg-fixed  bg-center bg-full lg:pt-[224px] lg:pb-[314px] md:py-[170px] py-[100px] overflow-x-clip">
+        <div class="max-w-[1058px] mx-auto">
+            <p
+                class="font-bold text-custom-sm leading-144 text-black text-center lg:pb-[105px] sm:pb-16 pb-5 uppercase">
+                kernkompetenz
+            </p>
+            <p
+                class="xl:text-custom-10xl md:text-9xl text-5xl !leading-50  transparent-text uppercase italic max-xl:text-center font-extrabold">
+                Strategie</p>
+            <p
+                class="xl:text-custom-10xl md:text-9xl text-5xl !leading-50  lg:pt-16 pt-10 transparent-text uppercase italic max-xl:text-center font-extrabold">
+                Branding</p>
+            <p
+                class="ff-gt-flexa xl:text-custom-10xl md:text-9xl text-5xl !leading-50   lg:pt-16 pt-10 transparent-text uppercase italic max-xl:text-center font-extrabold">
+                Content</p>
+
+        </div>
+    </section>
+    <!-- left-right -->
+    <section class="bg-white xl:pt-[310px] md:pt-[170px] pt-[100px] overflow-x-clip">
+        <div id="left-right-images" class=" xl:pl-[209px] lg:pl-28 sm:pl-16 px-6">
+            <p
+                class="font-bold italic lg:text-custom-8xl sm:text-5xl text-4xl leading-90 text-black max-w-[885px] uppercase pb-[103px]">
+                Wir nehmen die Perspektive des Kunden ein.</p>
+        </div>
+        </div>
+        <div class="relative z-[3] flex max-xl:flex-wrap xl:justify-between max-2xl:items-center justify-center gap-5">
+            <div class=""><img width="547" height="820" class="w-full max-w-[547px]"
+                    src="./assets/images/png/face-polothin.png" alt="face-polothin"></div>
+            <div class="xl:pr-[100px] pr-0 xl:pt-[680px] lg:pt-20 pt-5 max-sm:px-6">
+                <p
+                    class="font-light lg:text-custom-3xl sm:text-2xl text-xl leading-128 text-black xl:max-w-[523px] max-w-[861px] lg:pb-[106px] pb-10">
+                    Mit unserer durchdachten strategischen Beratung, kreativen Ideen und massge-schneiderten Designs
+                    gehen wir neue Wege. Unsere Unzufriedenheit mit dem Status
+                    Quo treibt uns an, immer besser zu werden.</p>
+                <div class="flex flex-wrap items-center max-lg:justify-center md:gap-16 gap-5">
+                    <p class="font-bold italic lg:text-custom-5xl text-3xl leading-100 text-black uppercase">Let’s talk.
+                    </p>
+                    <button
+                        class="font-bold text-custom-sm leading-65 text-black bg-bright-aqua uppercase  py-6 px-20 rounded-[50px] ">kontakt</button>
+                </div>
+            </div>
+        </div>
+        <!-- burger-img -->
+        <div class="xl:pt-[427px] lg:pt-[273px] sm:pt-[160px] pt-[75px] xl:pl-[358px] px-6 max-xl:flex justify-center">
+            <img width="645" height="440" class="object-cover w-full max-w-[645px] h-[440px] max-sm:h-[400px]"
+                src="./assets/images/png/burgur-plate.png" alt="burger-plate">
+        </div>
+        <!-- swinging-pool -->
+        <div class="xl:pt-[355px] lg:pt-[273px] sm:pt-[160px] pt-[75px] flex xl:justify-end justify-center max-xl:px-6">
+            <img class="object-cover max-w-[620px] h-[814px] w-full max-sm:h-[400px]"
+                src="./assets/images/png/swinging-pool.png" alt="swinging-pool">
+        </div>
+        <!-- horse-img -->
+        <div
+            class="2xl:pl-[278px] pl-[80px] xl:mt-[-95px] mt-0 xl:pt-0 lg:pt-[273px] sm:pt-[160px] pt-[75px] max-xl:flex justify-center max-xl:px-6">
+            <img width="576" height="573" class="pb-[630px] object-cover max-w-[576px] w-full max-sm:h-[400px]"
+                src="./assets/images/png/horse.png" alt="horse">
+        </div>
+
+        <div id="sitting-with-balloon" class="px-4 flex justify-center relative z-[3]"><img width="1427" height="827"
+                class="w-full xl:max-w-[1427px] max-w-[1200px] xl:h-[827px] h-[500px] mb-[-300px] object-cover" src="./assets/images/png/sitting-with-ballown.png"
+                alt="sitting-with-ballown"></div>
+        <div class="bg-black py-[450px]"></div>
+    </section>
+    <!--  -->
+    <section id="Wir-machen" class=" bg-black xl:pt-[150px] xl:pb-[70px] max-lg:pt-[77px] relative z-[4] min-h-screen">
+        <p id="pin-text"
+            class="ff_gt_x_cm font-extrabold 2xl:text-big xl:text-custom-11xl sm:text-custom-10xl text-5xl leading-100 text-center text-white uppercase max-w-[1727px] text-center relative z-[5] mx-auto 2xl:py-[267px] xl:py-[195px] pt-[276px] pb-[195px]">
+            WIR machen krawall</p>
+    </section>
+    <!-- bg-bright-aqua -->
+    <section id="background-bright-aqua" class="bg-bright-aqua relative z-[1]">
+        <div class="w-full h-[1002px] min-h-screen"></div>
+    </section>
+    <!-- berline-train -->
+    <section id="berlin-train" class="relative min-h-screen h-[973px] z-[6] flex justify-center items-center">
+        <div class="absolute xl:top-[20%] xl:right-[38%] sm:top-[27%] right-[20%] top-[37%] z-[3]"><img width="328" height="328" class="xl:max-w-[328px] sm:max-w-[250px] max-w-[150px]" src="./assets/images/svg/berlin-in.svg" alt="in"></div>
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="./assets/videos/train.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="relative z-10 ">
+            <p class="font-bold xl:text-custom-10xl sm:text-custom-8xl text-5xl italic leading-130 text-white uppercase">Berlin</p>
+        </div>
+    </section>
+    <!-- cycle -->
+    <section id="cycle" class="relative min-h-screen h-[973px] z-[7] flex justify-center items-center">
+        <div class="absolute xl:top-[23%] xl:right-[1%] sm:top-[25%] top-[37%] right-[15%] z-[7]"><img width="216" height="216" class="sm:max-w-[216px] max-w-[150px]" src="./assets/images/svg/cycle-heart.svg" alt="in"></div>
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="./assets/videos/cycle.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="relative z-10 ">
+            <p class="font-bold 2xl:text-custom-11xl sm:text-custom-10xl text-5xl leading-100 text-white uppercase ff_gt_x_cm "><span
+                    class="!font-light ff_gt_x_cm ">und</span> solothurn</p>
+        </div>
+    </section>
+    <!-- row-col-boxes -->
+    <section id="boxes" class="bg-black min-h-screen pt-[143px] pb-[200px] relative z-[8]">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-16 xl:gap-y-[46px] sm:gap-5 gap-0">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/benz.svg" alt="bexz">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/lufthansa.svg" alt="lufthansa">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/plus-sign.svg" alt="plus-sign">
+                <img width="295" height="205" class="mx-auto w-full sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/cartitas.svg" alt="cartitas">
+
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/samsung.svg" alt="samsung">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/adidas.svg" alt="adidas">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/swiss.svg" alt="swiss">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/zalando.svg" alt="zalando">
+
+
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/coop.svg" alt="coop">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/helion.svg" alt="helion">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/hard-rock.svg" alt="hard-rock">
+                <img width="295" height="205" class="w-full mx-auto sm:max-w-[295px] max-w-[200px] max-sm:h-[80px]" src="./assets/images/svg/fisherman.svg" alt="fisherman">
+            </div>
+        </div>
+    </section>
+    <!-- strips -->
+    <div class="bg-black overflow-x-clip">
+        <!-- 1st-strip -->
+        <div id="first-strip" class="overflow-x-clip relative z-[9] pt-[40px]">
+            <div class="bg-bright-aqua py-2 xl:py-4 rotate-[-2deg]  max-w-[2200px] md:-mx-10  relative z-9">
+                <p
+                    class="text-black font-extrabold italic md:text-custom-6xl text-4xl leading-100 text-black uppercase text-nowrap">
+                    mehr
+                    krawall
+                    für ihre juwelen mehr krawall für ihre juwelen
+                </p>
+            </div>
+        </div>
+        <!-- second-strip -->
+        <div id="second-strip" class="overflow-x-clip relative z-[10] pt-[400px]">
+            <div class="bg-white py-2 xl:py-4 rotate-[1deg]"><img src="./assets/images/svg/second-strip-bg-white.svg"
+                    alt="second-strip"></div>
+        </div>
+        <!-- third-strip -->
+        <div id="third-strip" class="overflow-x-clip relative z-[9] pt-[400px]">
+            <div
+                class="bg-black py-2 xl:py-4 rotate-[-2deg] md:-mx-[650px]  relative z-9 border border-t border-solid border-bright-aqua">
+                <p
+                    class=" font-extrabold italic md:text-custom-6xl text-4xl leading-100 text-black uppercase text-nowrap text-bright-aqua">
+                    mehr Wir
+                    suchen die kreativsten juwelen des Landes
+                </p>
+            </div>
+        </div>
+        <!-- fourth-strip -->
+        <div id="fourth-strip" class="overflow-x-clip relative z-[9] pt-[400px]">
+            <div class="bg-white py-2 xl:py-4 rotate-[1deg] sm:-mx-[1316px]  relative z-9">
+                <p
+                    class=" font-extrabold italic sm:text-custom-6xl text-4xl leading-100 uppercase text-nowrap text-bright-aqua">
+                    Wir sind eine Agentur für Branding und Kampagnen.
+                </p>
+            </div>
+        </div>
+        <!-- fifth-strip -->
+        <div id="fifth-strip" class="overflow-x-clip relative z-[10] pt-[400px]">
+            <div class=" py-2 xl:py-4 rotate-[-1deg]"><img src="./assets/images/png/fifth-strip.png" alt="fifth-strip">
+            </div>
+        </div>
+        <!-- sixth-strip -->
+        <div id="sixth-strip" class="overflow-x-clip relative z-[9] pt-[400px]">
+            <div
+                class="bg-black py-2 xl:py-4 rotate-[1deg] md:-mx-[650px] relative z-9 border border-t border-solid border-bright-aqua">
+                <p
+                    class=" font-extrabold italic md:text-custom-6xl text-4xl leading-100 text-black uppercase text-nowrap text-white">
+                    Wir sind eine Agentur für Branding und Kampagnen.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- diamond -->
+    <section class="bg-black xl:pt-[1040px] xl:pb-[356px] lg:py-[170px] py-[100px]">
+        <div class="container mx-auto">
+            <img width="560" height="583" class="mx-auto lg:max-w-[560px] sm:max-w-[400px] max-w-[200px]"
+                src="./assets/images/png/shining-diamond.png" alt="diamond">
+            <p
+                class="font-bold italic lg:text-custom-7xl sm:text-5xl text-4xl text-white leading-100 uppercase max-w-[1528px] text-center mx-auto lg:pt-0 pt-2">
+                Wir suchen die kreativsten juwelen des Landes – werde Teil unseres Teams!</p>
+            <div class="mx-auto text-center lg:pt-[71px] sm:pt-10 pt-5">
+                <button
+                    class="font-bold text-custom-sm leading-100 text-black uppercase bg-bright-aqua sm:py-6 sm:px-[60px] py-4 px-12 rounded-[50px]">
+                    bewirb dich
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-black lg:pt-[340px] lg:pb-0 md:py-[170px] py-100 px-3">
+        <div class="container max-w-[1528px] mx-auto border-t border-solid border-bright-aqua lg:pt-[166px] py-[80px]">
+            <div class="flex flex-wrap flex-row items-center ">
+                <div class="w-full lg:hidden max-sm:hidden flex justify-center">
+                    <img width="411" height="254" class="max-lg:max-w-[300px] max-lg:pb-5" src="./assets/images/svg/footer.svg" alt="footer-logo">
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 w-full">
+                    <p class="text-white text-lg leading-144 font-normal capitalize md:pb-12 pb-5"><span
+                            class="font-bold uppercase">Berlin</span> in Gründung</p>
+                    <p class="text-white text-xl leading-133"><span class="block">Krawal & Juwel GmbH</span><span
+                            class="block">Behaimstr. 6</span>D-10585 Berlin<span
+                            class="block md:pt-7 pt-4">berlin@krawallundjuwel.com</span></p>
+                </div>
+                <div class="lg:w-1/3 w-full max-sm:flex max-lg:hidden flex justify-center max-sm:py-8">
+                    <img width="411" height="254" class="max-sm:w-[200px]" src="./assets/images/svg/footer.svg" alt="footer-logo">
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 w-full flex justify-end">
+                    <div class="text-right">
+                        <p class="text-white text-lg leading-144 font-bold capitalize md:pb-12 pb-5">SOLOTHURN</p>
+                        <p class="text-white text-xl leading-133"><span class="block">Krawal & Juwel GmbH</span>
+                            <span class="block">Niedermattstrasse 6</span>
+                            CH-4500 Solothurn
+                            <span class="block md:pt-7 pt-4">solothurn@krawallundjuwel.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
