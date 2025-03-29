@@ -121,7 +121,6 @@ gsap.registerPlugin(ScrollTrigger);
             pinSpacing: false 
         }
       });
-
       //  berlin-train
       gsap.to("#background-bright-aqua", {
         scrollTrigger: {
@@ -170,5 +169,41 @@ gsap.registerPlugin(ScrollTrigger);
     //     }
     //   });
         
-
+// gsap.registerPlugin(ScrollTrigger)
+//         const third = gsap.timeline()
+//         console.log(third)
+//         third.to("#first-strip", {
+//             top: "150px",
+//         }, "1");
+//         third.to("#second-strip", {
+//             top: "320px",
+//         }, "2");
+//         third.to("#third-strip", {
+//             top: "380px",
+//         }, "3");
+//         third.to("#fourth-strip", {
+//             top: "470px",
+//         }, "4");
+//         third.to("#fifth-strip", {
+//             top: "510px",
+//         }, "5");
+//         third.to("#sixth-strip", {
+//             bottom: "350px",
+//         }, "6");
+//         third.to("#diamond", {
+//             top: 0,
+//         }, "7");
+//         third.to("#layer", {
+//             top: 0,
+//         }, "7");
+//         ScrollTrigger.create({
+//             trigger: "#logos",
+//             start: "top  top",
+//             end: "+=500%",
+//             pin: true,
+//             scrub: 1,
+//             pinSpacing: false,
+//             markers: true,
+//             animation: third,
+//         });
       
