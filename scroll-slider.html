@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/tailwind.js"></script>
+
+</head>
+
+<body>
+    <section class="min-h-screen text-[90px] flex justify-center items-center">
+        <div>Section</div>
+    </section>
+    <div class="min-h-screen flex flex-col justify-center items-center sliderParent">
+        <div class="w-full h-1 bg-gray-400 max-w-[1000px] relative">
+            <div class=" bg-red-400 h-1 z-10  w-[25%] redLine"></div>
+        </div>
+        <div class="flex max-w-[1000px] justify-between gap-20 mt-10">
+            <p class="max-w-[200px] contentOne">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+                mollitia amet
+                impedit suscipit quia.</p>
+            <p class="max-w-[200px] contentTwo opacity-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus mollitia amet
+                impedit
+                suscipit quia.</p>
+            <p class="max-w-[200px] contentThree opacity-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus mollitia amet
+                impedit
+                suscipit quia.</p>
+            <p class="max-w-[200px] contentFour opacity-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus mollitia amet
+                impedit
+                suscipit quia.</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".sliderParent",
+                start: "top top",
+                end: "+=200%",
+                pin: true,
+                scrub: 1,
+                markers: true,
+            }
+        });
+        tl.to(".redLine", { width: "50%", duration: 1 })
+            .to(".contentTwo", { opacity: 1, duration: 1 })
+            .to(".redLine",
+                {
+                    width: "75%",
+                    duration: 1,
+                }
+            )
+            .to(".contentThree", { opacity: 1, duration: 1 })
+            .to(".redLine", {
+                width: "100%",
+                duration: 1,
+            })
+            .to(".contentFour", { opacity: 1, duration: 1 });
+
+
+
+    </script>
+</body>
+
+
+
+</html>
